@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".controllers.MainActivity">
 
 
     <TextView
@@ -106,7 +106,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginBottom="0dp">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerViewListLineaInvestigacion"
+            android:id="@+id/recyclerViewLineaInvestigacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
