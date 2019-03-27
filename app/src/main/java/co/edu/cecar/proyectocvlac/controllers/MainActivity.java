@@ -7,16 +7,24 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import co.edu.cecar.proyectocvlac.R;
+
+import static android.R.layout.simple_list_item_1;
 
 public class MainActivity extends AppCompatActivity {
     private TextInputEditText txtNombres;
     private TextInputEditText txtNacionalidad;
     private TextInputEditText txtSexo;
     private TextInputEditText txtCategoria;
-    private RecyclerView recyclerViewLineaInvestigacion;
+    private ListView listViewLineaInvestigacion;
+    private List<String> lineaInvestigacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         txtNacionalidad = findViewById(R.id.txtNacionalidad);
         txtSexo = findViewById(R.id.txtSexo);
         txtCategoria = findViewById(R.id.txtCategorizado);
+        listViewLineaInvestigacion=findViewById(R.id.listViewLineaInvestigacion);
 
 
         Button btObtenerDatosCVLac = findViewById(R.id.btnObtenerDatos);
@@ -50,9 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478
                  */
 
-                Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000733180");
+                Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
                 adicionarDatosCasillasTexto(investigador);
-
             }
 
         }).start();
@@ -70,6 +78,16 @@ public class MainActivity extends AppCompatActivity {
                 txtNacionalidad.setText(investigador.getNacionalidad());
                 txtSexo.setText(investigador.getSexo());
                 txtCategoria.setText(investigador.isCategorizado() ? "Si" : "No");
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.i("datoss",investigador.getLineas()+"");
+                        listViewLineaInvestigacion.setAdapter(new ArrayAdapter<String>(MainActivity.this,
+                                simple_list_item_1,investigador.getLineas()));
+                    }
+                });
+
 
             }
         });

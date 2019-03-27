@@ -13,6 +13,8 @@
 
 package co.edu.cecar.proyectocvlac.controllers;
 
+import java.util.List;
+
 /**
   Esta clase modela los datos de un Investigador
 */
@@ -23,6 +25,8 @@ public class Investigador {
     private String nacionalidad;
     private String sexo;
     private boolean categorizado;
+    private List<String> lineas;
+
 
     public Investigador(String nombres, String nacionalidad, String sexo,boolean categorizado) {
 
@@ -60,5 +64,14 @@ public class Investigador {
     public boolean isCategorizado() {
         return categorizado;
     }
-	
+
+    public List<String> getLineas() {
+        return lineas;
+    }
+
+    public void setLineas(List<String> lineas) {
+        this.lineas = lineas;
+    }
+
+
 }

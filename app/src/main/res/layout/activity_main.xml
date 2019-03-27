@@ -97,20 +97,30 @@
         android:textColor="@android:color/black"
         android:textStyle="bold" />
 
-    <ScrollView
+   <!-- <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ticategorizado"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerViewLineaInvestigacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_marginBottom="0dp">-->
+    <ListView
+        android:id="@+id/listViewLineaInvestigacion"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="8dp">
 
-        </android.support.v7.widget.RecyclerView>
-    </ScrollView>
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ticategorizado"
+        android:layout_marginTop="8dp"
+        android:text="Lineas de Investigacion" />
+    <!--</ScrollView>-->
 
 </RelativeLayout>
