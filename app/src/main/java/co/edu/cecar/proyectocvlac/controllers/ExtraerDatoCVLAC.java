@@ -50,11 +50,11 @@ public class ExtraerDatoCVLAC {
                     if(tr.text().equalsIgnoreCase("Líneas de investigación")){
                         Elements listas = tablas.get(i).select("li");
                         for (Element lista : listas) {
-                            Log.i("dato lista",lista.text());
+                          //  Log.i("dato lista",lista.text());
                          //   List<TextNode> nodos = lista.textNodes();
                             lineasInvestigacion.add(lista.text());
                             investigador.setLineas(lineasInvestigacion);
-                            Log.i("datos extraer", lineasInvestigacion+"");
+                        //    Log.i("datos extraer", lineasInvestigacion+"");
                         }
                     }
                 }
