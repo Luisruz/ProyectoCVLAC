@@ -17,13 +17,11 @@ public class ExtraerDatoCVLAC {
         List<String> lineasInvestigacion = new ArrayList<>();
 
         try {
-
-            //Se obtiene el documento HTML
             Document documentoHTML = Jsoup.connect(url).get();
 
             Elements tablas = documentoHTML.select("table"); //Se obtiene la segunda tabla
             Element tDatospersonales = documentoHTML.select("table").get(1);
-            Elements filasTabla = tDatospersonales.select("tr"); // Se obtienen las filas de la tabla
+            Elements filasTabla = tDatospersonales.select("tr");
 
             int filaNombre = 0;
             int filaNacionalidad = 2;
@@ -34,12 +32,10 @@ public class ExtraerDatoCVLAC {
                 filaSexo = 5;
             }
 
-            //Se obtienen las columnas para cada atributo del invstigador
             String nombre = filasTabla.get(filaNombre).select("td").get(1).text();
             String nacionalidad = filasTabla.get(filaNacionalidad).select("td").get(1).text();
             String sexo = filasTabla.get(filaSexo).select("td").get(1).text();
 
-            //Se crea el objeto investigador
             investigador = new Investigador(nombre, nacionalidad, sexo, true);
             for (int i = 2; i < tablas.size(); i++) {
                 Element tr = tablas.get(i).select("tr").first();
