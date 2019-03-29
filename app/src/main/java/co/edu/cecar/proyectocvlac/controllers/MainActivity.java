@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText txtSexo;
     private TextInputEditText txtCategoria;
     private ListView listViewLineaInvestigacion;
-    private List<String> lineaInvestigacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

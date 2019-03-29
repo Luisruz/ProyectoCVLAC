@@ -1,6 +1,8 @@
 package co.edu.cecar.proyectocvlac.controllers;
 
 
+import android.widget.Toast;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExtraerDatoCVLAC {
+    private ExtraerDatoCVLAC(){
+
+    }
 
     public static Investigador getDatos(String url) {
 
@@ -39,8 +44,8 @@ public class ExtraerDatoCVLAC {
             investigador = new Investigador(nombre, nacionalidad, sexo, true);
             for (int i = 2; i < tablas.size(); i++) {
                 Element tr = tablas.get(i).select("tr").first();
-                if (tr!=null){
-                    if(tr.text().equalsIgnoreCase("Líneas de investigación")){
+                if(tr!=null) {
+                    if (tr.text().equalsIgnoreCase("Líneas de investigación")) {
                         Elements listas = tablas.get(i).select("li");
                         for (Element lista : listas) {
                             lineasInvestigacion.add(lista.text());
@@ -53,8 +58,6 @@ public class ExtraerDatoCVLAC {
 
 
         } catch (IOException e) {
-
-            e.printStackTrace();
 
         }
 
