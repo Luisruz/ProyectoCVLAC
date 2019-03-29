@@ -1,17 +1,13 @@
 package co.edu.cecar.proyectocvlac.controllers;
 
-import android.os.AsyncTask;
+
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.cecar.proyectocvlac.R;
@@ -53,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                /*
-                http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001376707
-                http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000787132
-                http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478
-                 */
-
                 Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
                 adicionarDatosCasillasTexto(investigador);
             }
@@ -82,13 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.i("datoss",investigador.getLineas()+"");
                         listViewLineaInvestigacion.setAdapter(new ArrayAdapter<String>(MainActivity.this,
                                 simple_list_item_1,investigador.getLineas()));
                     }
                 });
-
-
             }
         });
 

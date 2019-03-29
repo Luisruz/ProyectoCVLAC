@@ -1,13 +1,10 @@
 package co.edu.cecar.proyectocvlac.controllers;
 
-import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,11 +47,8 @@ public class ExtraerDatoCVLAC {
                     if(tr.text().equalsIgnoreCase("Líneas de investigación")){
                         Elements listas = tablas.get(i).select("li");
                         for (Element lista : listas) {
-                          //  Log.i("dato lista",lista.text());
-                         //   List<TextNode> nodos = lista.textNodes();
                             lineasInvestigacion.add(lista.text());
                             investigador.setLineas(lineasInvestigacion);
-                        //    Log.i("datos extraer", lineasInvestigacion+"");
                         }
                     }
                 }
