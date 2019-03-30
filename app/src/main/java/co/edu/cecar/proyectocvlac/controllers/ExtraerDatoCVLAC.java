@@ -43,7 +43,7 @@ public class ExtraerDatoCVLAC {
                     }
                 }
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
         }
         return investigador;
 
