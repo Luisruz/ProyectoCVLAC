@@ -12,7 +12,8 @@ public class ExtraerDatoCVLACUnitTest {
 
     @Rule
     public GestionarTestExtraerDatoCVLAC gestionarTestExtraerDatoCVLAC = new GestionarTestExtraerDatoCVLAC();
-
+/**/
+    //test
     @Test
     public void testDatosCVLAC() {
         Investigador investigador1 = ExtraerDatoCVLAC.getDatos("http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
@@ -23,7 +24,7 @@ public class ExtraerDatoCVLACUnitTest {
         lineaInvestigador1.add("control de calidad de alimentos, Activa:Si");
         lineaInvestigador1.add("Tecnologìa y Calidad en la industria del Alimento Calidad en alimento, Activa:Si");
         lineaInvestigador1.add("contaminación ambiental, Activa:Si");
-
+//comparamos
         assertEquals(nombreInvestigador1, investigador1.getNombres());
         assertEquals(nacionalidadInvestigador1,investigador1.getNacionalidad());
         assertEquals(sexoInvestigador1,investigador1.getSexo());
