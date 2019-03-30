@@ -8,7 +8,6 @@ public class GestionarTestExtraerDatoCVLAC  extends TestWatcher {
     protected void succeeded(Description description) {
         System.out.println("la prueba del metodo "+description.getClassName()+ " ha sido Exitosa");
     }
-
     @Override
     protected void failed(Throwable e, Description description) {
         System.out.println("la prueba del metodo "+description.getClassName()+ " ha sido Fallado");

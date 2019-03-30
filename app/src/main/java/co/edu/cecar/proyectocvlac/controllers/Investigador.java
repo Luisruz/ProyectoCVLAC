@@ -26,15 +26,12 @@ public class Investigador {
     private String sexo;
     private boolean categorizado;
     private List<String> lineas;
-
-
     public Investigador(String nombres, String nacionalidad, String sexo,boolean categorizado) {
 
         this.nombres = nombres;
         this.nacionalidad = nacionalidad;
         this.sexo = sexo;
         this.categorizado = categorizado;
-
     }
 
     public String getNombres() {
