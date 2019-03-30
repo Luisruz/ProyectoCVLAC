@@ -11,34 +11,6 @@ import java.util.List;
 public class ExtraerDatoCVLAC {
     private ExtraerDatoCVLAC() {
     }
-
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno// ComentarioUno// ComentarioUno
-    // ComentarioUno// ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-    // ComentarioUno// ComentarioUno
-    // ComentarioUno
-    // ComentarioUno
-
-
-
-
-
     public static Investigador getDatos(String url) {
         Investigador investigador = null;
         List<String> lineasInvestigacion = new ArrayList<>();
